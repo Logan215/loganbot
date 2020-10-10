@@ -4,7 +4,7 @@ from discord.ext import commands
 import asyncio
 import os
 import random
-
+import youtube_dl
 client = commands.Bot(command_prefix = '.')
 
 @client.command()
@@ -21,7 +21,6 @@ for filename in os.listdir('./cogs'):
 
 @client.event
 async def on_ready():
-	activity = discord.Game(name="bot")
 	await client.change_presence(activity=discord.Game(name="Discord"))
 	print('Bot is ready!')
 
@@ -113,10 +112,28 @@ async def osu(ctx, member):
 	 	await ctx.send(f'{member} you playing osu! baby gurl')
 
 @client.command()
+async def mc(ctx, member):
+	await ctx.send(f'{member} lets play minecraft baby gurl')
+
+@client.command()
 async def comfort(ctx, *, user):
 	image = os.listdir('./cogs/comfort/')
 	imgString = random.choice(image)
 	path = "./cogs/comfort/" + imgString
 	await ctx.send(f'{ctx.message.author.mention} comforted {user}!', file=discord.File(path))
 
-client.run('NzQ4NjgzMzE0MTIyMTk1MTI0.X0g_qw.ChCHzkf-qOsG-YYNJc_nqYE8Z0A') 
+@client.command()
+async def kiss(ctx, *, user):
+	image = os.listdir('./cogs/kiss/')
+	imgString = random.choice(image)
+	path = "./cogs/kiss/" + imgString
+	await ctx.send(f'{ctx.message.author.mention} kissed {user}!', file=discord.File(path))
+
+@client.command
+async def hug(ctx, *, user):
+	image = os.listdir('./cogs/hug/')
+	imgString = random.choice(image)
+	path = './cogs/hug/' + imgString
+	await ctx.send(f'{ctx.message.author.mention} huged {user}!', file=discord.File(path))
+
+client.run('NzQ4NjgzMzE0MTIyMTk1MTI0.X0g_qw.IervcTvqSJ16Bw6wX5GFrFWXuwg') 

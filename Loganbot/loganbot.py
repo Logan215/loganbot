@@ -136,4 +136,4 @@ async def hug(ctx, *, user):
 	path = './cogs/hug/' + imgString
 	await ctx.send(f'{ctx.message.author.mention} huged {user}!', file=discord.File(path))
 
-client.run('NzQ4NjgzMzE0MTIyMTk1MTI0.X0g_qw.IervcTvqSJ16Bw6wX5GFrFWXuwg')
+client.run('')

@@ -114,7 +114,22 @@ async def osu(ctx, member):
 @client.command()
 async def mc(ctx, member):
 	await ctx.send(f'{member} lets play minecraft baby gurl')
+	
+@client.command()
+async def gay(ctx, member):
+	await ctx.send(f'{memeber} likes men')
+	
+@client.command()
+async def lesbian(ctx, member):
+	await ctx.send(f'{memeber} likes women')
 
+@client.command()
+async def Anime Girl(ctx, *, user:
+		     image = os.listdir('./cogs/anime_girl/')
+		     imgString = random.choice(image
+		     path = "./cogs/anime_girl/" + imgString
+		     await ctx send(f'{ctx.message.author.mention} Here is a random anime girl you degenerate!', file discord.File(path))
+	
 @client.command()
 async def comfort(ctx, *, user):
 	image = os.listdir('./cogs/comfort/')
@@ -136,4 +151,12 @@ async def hug(ctx, *, user):
 	path = './cogs/hug/' + imgString
 	await ctx.send(f'{ctx.message.author.mention} huged {user}!', file=discord.File(path))
 
+@client.command
+async def kill (ctx, *, user):
+	image = os.listdir('./cogs/kill/')
+	imgString = random.choice(image)
+	path = './cogs/kill/' + imgString
+	await ctx.send(f'{ctx.message.author.mention} killed {user}!', file=discord.File(path))
+
+	
 client.run('')
